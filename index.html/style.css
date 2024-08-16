@@ -1,3 +1,68 @@
+/* Style général pour le site */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    transition: .5s;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    width: 90%;
+    max-width: 1200px;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    font-size: 30px;
+    cursor: pointer;
+    color: #6c63ff; /* Couleur du logo */
+}
+
+.header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.header nav ul li {
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.header nav ul li:hover {
+    color: #6c63ff;
+}
+
+.btn {
+    width: 150px;
+    height: 45px;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    background-color: #0000ff; /* Bouton bleu */
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
 /* Ajout d'un menu hamburger pour les petits écrans */
 .menu-toggle {
     display: none;
@@ -51,7 +116,7 @@
     .btn {
         width: 100%;
         margin-top: 10px;
-        background-color: #32cd32; /* Couleur du bouton pour mobile */
+        background-color: #0000ff; /* Bouton bleu pour mobile */
     }
 
     .mid_container {
@@ -68,13 +133,6 @@
     }
 }
 
-/* Adaptation du logo */
-.logo {
-    font-size: 30px;
-    cursor: pointer;
-    color: #6c63ff;
-}
-
 /* Styles pour le menu hamburger */
 .menu-toggle.active + nav ul {
     display: flex;
@@ -85,4 +143,31 @@
     background-color: #f9f9f9; /* Couleur de fond des sections pour un meilleur contraste */
     border-radius: 10px;
     padding: 20px;
+}
+
+/* Style des images */
+.image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto; /* Centrer l'image */
+}
+
+@media (max-width: 767px) {
+    .section {
+        flex-direction: column; /* Assure que les images et le texte s'affichent en colonne sur mobile */
+        align-items: center;
+    }
+
+    .image img {
+        width: 90%; /* Reduit légèrement la largeur pour un meilleur rendu sur mobile */
+        max-width: 90%;
+        margin-bottom: 20px; /* Ajouter un espace sous l'image pour éviter qu'elle soit collée au texte */
+    }
+
+    .footer {
+        padding: 10px; /* Réduit l'espace au bas de la page pour mobile */
+    }
 }
